@@ -38,4 +38,26 @@ function mostrarAmigos() {
     });
 }
 
+function sortearAmigo() {
+    // 1. Verificar que la lista no esté vacía
+    if (listaDeAmigos.length === 0) {
+        alert("No hay amigos en la lista para sortear.");
+        return;
+    }
+
+    // 2. Generar un índice aleatorio
+    let indice = Math.floor(Math.random() * listaDeAmigos.length);
+
+    // 3. Obtener al ganador
+    let ganador = listaDeAmigos[indice];
+
+    // 4. Mostrar el ganador en el <ul id="resultado">
+    let ulResultado = document.getElementById("resultado");
+    ulResultado.innerHTML = ""; // limpiar sorteos anteriores
+
+    let li = document.createElement("li");
+    li.textContent = ganador;
+    ulResultado.appendChild(li);
+}
+
 

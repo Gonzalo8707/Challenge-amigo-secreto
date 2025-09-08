@@ -160,3 +160,33 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+/* Animación de serpentina para el ganador */
+.resultado-animado {
+    display: inline-block;
+    animation: serpentina 0.8s ease-out forwards;
+}
+
+/* Estado inicial antes de la animación */
+#resultado li {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.1s, opacity 0.1s;
+}
+
+@keyframes serpentina {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translateX(10%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

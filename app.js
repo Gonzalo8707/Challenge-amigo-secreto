@@ -57,7 +57,21 @@ function sortearAmigo() {
 
     let li = document.createElement("li");
     li.textContent = ganador;
-    ulResultado.appendChild(li);
-}
 
+    // Insertar en el DOM sin animación
+    ulResultado.appendChild(li);
+
+    // Usar requestAnimationFrame para asegurar que el elemento esté renderizado
+    requestAnimationFrame(() => {
+        li.classList.add("resultado-animado");
+    });
+}
+// opcionde agregar amigo al presionar enter
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("amigo").addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            agregarAmigo();
+        }
+    });
+});
 
